@@ -34,8 +34,8 @@ public class Login extends AppCompatActivity {
                     String password = Password.getText().toString();
 
                     if (username.equals("admin") && password.equals("admin")) {
-                        Intent ya = new Intent(Login.this,MainActivity.class);
-                        startActivity(ya);
+                        Intent loginPage = new Intent(Login.this,MainActivity.class);
+                        startActivity(loginPage);
                     }
                     else {
                         Toast.makeText(Login.this, "Gagal Login", Toast.LENGTH_LONG).show();
