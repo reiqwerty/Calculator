@@ -34,7 +34,7 @@ public class Login extends AppCompatActivity {
                     String password = Password.getText().toString();
 
                     if (username.equals("admin") && password.equals("admin")) {
-                        Intent loginPage = new Intent(Login.this,MainActivity.class);
+                        Intent loginPage = new Intent(Login.this,Home.class);
                         startActivity(loginPage);
                     }
                     else {

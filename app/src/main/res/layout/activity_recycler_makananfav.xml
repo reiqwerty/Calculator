@@ -6,10 +6,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".recyclerClub">
+    tools:context=".recyclerMakanan">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvClub"
+        android:id="@+id/rvMakanan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

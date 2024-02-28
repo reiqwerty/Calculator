@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ClubAdapater extends RecyclerView.Adapter<ViewHolder> {
+public class MakananAdapater extends RecyclerView.Adapter<ViewHolder> {
     private Context context;
-    private List<ClubModel> clubList;
+    private List<MakananModel> MakananList;
 
-    public ClubAdapater(Context context, List<ClubModel> clubList) {
+    public MakananAdapater(Context context, List<MakananModel> makananList) {
         this.context = context;
-        this.clubList = clubList;
+        this.MakananList = makananList;
     }
 
     @NonNull
@@ -29,13 +29,13 @@ public class ClubAdapater extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final ClubModel clb = this.clubList.get(position);
-        holder.tvName.setText(clb.getNama());
-        holder.tvLiga.setText(clb.getLiga());
-        holder.imgClub.setImageResource(clb.getImgSrc());
+        final MakananModel mkn = this.MakananList.get(position);
+        holder.tvNama.setText(mkn.getNama());
+        holder.tvHarga.setText(mkn.getHarga());
+        holder.imgMkn.setImageResource(mkn.getImgSrc());
     }
 
     @Override
     public int getItemCount() {
-        return this.clubList.size();}
+        return this.MakananList.size();}
 }

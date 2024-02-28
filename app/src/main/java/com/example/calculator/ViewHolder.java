@@ -8,13 +8,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
-    TextView tvName, tvLiga;
-    ImageView imgClub;
+    TextView tvNama, tvHarga;
+    ImageView imgMkn;
 
     public ViewHolder(@NonNull View itemView) {
         super(itemView);
-        tvName = itemView.findViewById(R.id.tvName);
-        tvLiga = itemView.findViewById(R.id.tvLiga);
-        imgClub = itemView.findViewById(R.id.img);
+        tvNama = itemView.findViewById(R.id.tvNama);
+        tvHarga = itemView.findViewById(R.id.tvHarga);
+        imgMkn = itemView.findViewById(R.id.img);
     }
 }

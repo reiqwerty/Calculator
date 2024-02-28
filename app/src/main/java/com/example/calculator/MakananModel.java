@@ -1,8 +1,8 @@
 package com.example.calculator;
 
-public class ClubModel {
+public class MakananModel {
     private String nama;
-    private String liga;
+    private String harga;
     private int imgSrc;
 
     public String getNama() {
@@ -21,11 +21,11 @@ public class ClubModel {
         this.imgSrc = imgSrc;
     }
 
-    public String getLiga() {
-        return liga;
+    public String getHarga() {
+        return harga;
     }
 
-    public void setLiga(String liga) {
-        this.liga = liga;
+    public void setHarga(String harga) {
+        this.harga = harga;
     }
 }

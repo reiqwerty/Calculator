@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Spinner  spinner1;
     TextView txtHasil;
     Button btnJumlah;
+    Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         txtHasil = findViewById(R.id.txtHasil);
         spinner1 = findViewById(R.id.spinner1);
         btnJumlah = findViewById(R.id.btnJumlah);
+        btnBack = findViewById(R.id.btnBack);
         btnJumlah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +56,13 @@ public class MainActivity extends AppCompatActivity {
                         txtHasil.setText(hasilDouble + "");
                         break;
                 }
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
     }

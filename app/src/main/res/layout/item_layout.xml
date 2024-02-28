@@ -15,12 +15,12 @@
         android:layout_margin="16dp">
 
         <TextView
-            android:id="@+id/tvName"
+            android:id="@+id/tvNama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
             android:layout_marginLeft="20dp"
-            android:text="Club"
+            android:text="Makanan"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvLiga"
+            android:id="@+id/tvHarga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -36,7 +36,7 @@
             android:textColor="#FFEB3B"
             android:textSize="15dp"
             app:layout_constraintStart_toEndOf="@+id/img"
-            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+            app:layout_constraintTop_toBottomOf="@+id/tvNama" />
 
         <ImageView
             android:id="@+id/img"
