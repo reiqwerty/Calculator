@@ -1,9 +1,11 @@
 package com.example.calculator;
 
+import android.widget.ImageView;
+
 public class MakananModel {
     private String nama;
     private String harga;
-    private int imgSrc;
+    private String imgSrc;
 
     public String getNama() {
         return nama;
@@ -13,19 +15,19 @@ public class MakananModel {
         this.nama = nama;
     }
 
-    public int getImgSrc() {
-        return imgSrc;
-    }
-
-    public void setImgSrc(int imgSrc) {
-        this.imgSrc = imgSrc;
-    }
-
     public String getHarga() {
         return harga;
     }
 
     public void setHarga(String harga) {
         this.harga = harga;
+    }
+
+    public String getImgSrc() {
+        return imgSrc;
+    }
+
+    public void setImgSrc(String imgSrc) {
+        this.imgSrc = imgSrc;
     }
 }
