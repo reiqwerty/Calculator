@@ -4,15 +4,18 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class MakananAdapater extends RecyclerView.Adapter<ViewHolder> {
+public class MakananAdapater extends RecyclerView.Adapter<MakananAdapater.ViewHolder> {
     private Context context;
     private List<MakananModel> MakananList;
+    private ItemClickListener mClickListener;
 
     public MakananAdapater(Context context, List<MakananModel> makananList) {
         this.context = context;
@@ -38,4 +41,39 @@ public class MakananAdapater extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public int getItemCount() {
         return this.MakananList.size();}
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView tvNama, tvHarga;
+        ImageView imgMkn;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            tvNama = itemView.findViewById(R.id.tvNama);
+            tvHarga = itemView.findViewById(R.id.tvHarga);
+            imgMkn = itemView.findViewById(R.id.img);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+        }
+    }
+    MakananModel getItem(int id) {
+        return MakananList.get(id);
+    }
+
+    // allows clicks events to be caught
+    void setClickListener(ItemClickListener itemClickListener) {
+        this.mClickListener = itemClickListener;
+    }
+
+    // parent activity will implement this method to respond to click events
+    public interface ItemClickListener {
+        void onItemClick(View view, int position);
+    }
 }
+
+
+
+

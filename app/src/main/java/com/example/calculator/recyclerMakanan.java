@@ -5,12 +5,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class recyclerMakanan extends AppCompatActivity {
+public class recyclerMakanan extends AppCompatActivity implements MakananAdapater.ItemClickListener {
     RecyclerView rvMakanan;
     ArrayList<MakananModel> listDataMakanan;
+    MakananAdapater adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +64,14 @@ public class recyclerMakanan extends AppCompatActivity {
         mknSeven.setImgSrc(R.drawable.rotibakar);
         listDataMakanan.add(mknSeven);
 
+        adapter = new MakananAdapater(this, listDataMakanan);
+        adapter.setClickListener(this);
         rvMakanan.setLayoutManager(new LinearLayoutManager(this));
         rvMakanan.setAdapter(new MakananAdapater(getApplicationContext(),listDataMakanan));
+        rvMakanan.setAdapter(adapter);
+    }
+    @Override
+    public void onItemClick(View view, int position) {
+        Toast.makeText(this, "You clicked " + adapter.getItem(position).getNama() + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
 }
