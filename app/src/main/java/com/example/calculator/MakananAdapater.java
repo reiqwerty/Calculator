@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,7 +35,7 @@ public class MakananAdapater extends RecyclerView.Adapter<MakananAdapater.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final MakananModel mkn = this.MakananList.get(position);
         holder.tvNama.setText(mkn.getNama());
-        holder.tvHarga.setText(mkn.getHarga());
+        holder.tvDesc.setText(mkn.getDesc());
         Glide.with(holder.itemView.getContext())
                 .load(mkn.getImgSrc())
                 .into(holder.imgMkn);
@@ -47,13 +46,13 @@ public class MakananAdapater extends RecyclerView.Adapter<MakananAdapater.ViewHo
         return this.MakananList.size();}
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView tvNama, tvHarga;
+        TextView tvNama, tvDesc;
         ImageView imgMkn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvNama = itemView.findViewById(R.id.tvNama);
-            tvHarga = itemView.findViewById(R.id.tvHarga);
+            tvDesc = itemView.findViewById(R.id.tvDesc);
             imgMkn = itemView.findViewById(R.id.img);
             itemView.setOnClickListener(this);
         }
