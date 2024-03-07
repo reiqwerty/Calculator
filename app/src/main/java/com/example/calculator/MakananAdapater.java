@@ -66,12 +66,10 @@ public class MakananAdapater extends RecyclerView.Adapter<MakananAdapater.ViewHo
         return MakananList.get(id);
     }
 
-    // allows clicks events to be caught
     void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;
     }
 
-    // parent activity will implement this method to respond to click events
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
